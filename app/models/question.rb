@@ -1,3 +1,2 @@
-class Question < ApplicationRecord
-  has_many :answers
-end
+class Question < ActiveRecord::Base
++end
