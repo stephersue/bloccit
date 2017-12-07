@@ -4,7 +4,8 @@ RSpec.describe User, type: :model do
   let(:user) { User.create!(name: "Bloccit User", email: "user@bloccit.com", password: "password") }
 
    it { is_expected.to have_many(:posts) }
-
+   it { is_expected.to have_many(:comments) }
+   
    # Shoulda tests for name
    it { is_expected.to validate_presence_of(:name) }
    it { is_expected.to validate_length_of(:name).is_at_least(1) }
@@ -38,7 +39,7 @@ RSpec.describe User, type: :model do
        expect(user_with_invalid_email).to_not be_valid
      end
    end
-   
+
    it "responds to role" do
          expect(user).to respond_to(:role)
        end
